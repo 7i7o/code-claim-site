@@ -1,9 +1,10 @@
+import { ethers } from 'ethers';
 import * as fs from 'fs';
 import MerkleGenerator from '../utils/merkleGenerator';
 
 const TOKEN_DECIMALS = 18;
 const TOKEN_AMOUNT_NFT = 400;
-const TOKEN_AMOUNT_EARLY_CONTRIB = 399;
+const TOKEN_AMOUNT_VOTES_POAP = 399;
 
 const args = process.argv.slice(2);
 const nftHoldersPath = args[0];
@@ -24,17 +25,23 @@ async function main() {
 
   // NFT Holders allocation
   nftHolders.addresses.forEach((address: string) => {
-    airdrop[address] = TOKEN_AMOUNT_NFT;
+    const formattedAddress = ethers.utils.getAddress(address);
+
+    airdrop[formattedAddress] = TOKEN_AMOUNT_NFT;
   });
 
   // Voters & POAP holders allocation
   votersAndPoapHolders.eligible_address.forEach(({ address }: { address: string }) => {
-    if (!(address in nftHolders)) {
-      airdrop[address] = TOKEN_AMOUNT_EARLY_CONTRIB;
+    const formattedAddress = ethers.utils.getAddress(address);
+
+    if (!(formattedAddress in airdrop)) {
+      airdrop[formattedAddress] = TOKEN_AMOUNT_VOTES_POAP;
     } else {
-      airdrop[address] += TOKEN_AMOUNT_EARLY_CONTRIB;
+      airdrop[formattedAddress] += TOKEN_AMOUNT_VOTES_POAP;
     }
   });
+
+  fs.writeFileSync('data/airdrop.json', JSON.stringify(airdrop));
 
   // Create the generate & process it
   const generator = new MerkleGenerator(TOKEN_DECIMALS, airdrop);
