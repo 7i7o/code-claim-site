@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    className="chakra-container css-0"
+  >
+    TODO
+  </div>
+</div>
+`;
