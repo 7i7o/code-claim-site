@@ -13,9 +13,12 @@
     "test:watch": "jest --watch --detectOpenHandles",
     "test:ci": "jest --ci",
     "e2e": "cypress run",
-    "e2e:watch": "cypress open"
+    "e2e:watch": "cypress open",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
@@ -29,18 +32,31 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@chakra-ui/storybook-addon": "^1.0.1",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "^6.4.13",
+    "@storybook/addon-docs": "^6.4.13",
+    "@storybook/addon-essentials": "^6.4.13",
+    "@storybook/addon-links": "^6.4.13",
+    "@storybook/builder-webpack5": "^6.4.13",
+    "@storybook/manager-webpack5": "^6.4.13",
+    "@storybook/react": "^6.4.13",
     "@testing-library/cypress": "^8.0.1",
     "@types/node": "16.11.6",
     "@types/react": "17.0.34",
     "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
     "cypress": "^8.7.0",
     "eslint": "7",
     "eslint-config-next": "12.0.3",
+    "eslint-plugin-storybook": "^0.5.6",
     "eslint-plugin-testing-library": "^5.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
     "react-test-renderer": "^17.0.2",
-    "typescript": "4.4.4"
+    "typescript": "4.4.4",
+    "webpack": "^5.66.0"
   }
 }

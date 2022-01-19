@@ -28,9 +28,9 @@ A monorepo containing both the $CODE token contract & the claim web app.
 
 Here is a list of the main scripts to run:
 
-`yarn execute localhost scripts/getMerkleRoot data/nft_holders.json data/votes_and_poap_holders.json`
-
-This will create the Merkle Tree based on the two inputs and output the root hash.
+- Default dev environment, esp. when working on the web app: `yarn dev`
+- Spin-up the storybook for isolated UI development: `yarn storybook`
+- This will create the Merkle Tree: `yarn execute localhost scripts/getMerkleRoot data/nft_holders.json data/votes_and_poap_holders.json`
 
 ## Development
 

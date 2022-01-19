@@ -1,20 +1,8 @@
 {
-  "name": "nextjs-dapp-starter-ts",
+  "name": "code-claim-site",
   "packageManager": "yarn@3.1.0",
   "private": true,
-  "repository": "github:G3root/nextjs-dapp-starter-ts",
-  "author": "G3root",
   "license": "MIT",
-  "keywords": [
-    "ethereum",
-    "smart-contracts",
-    "template",
-    "starter",
-    "hardhat",
-    "solidity",
-    "nextjs",
-    "typescript"
-  ],
   "scripts": {
     "dev": "yarn workspaces foreach -pi run dev",
     "build": "yarn workspaces foreach -t run build",
@@ -41,6 +29,7 @@
     "fork:node": "yarn workspace hardhat run fork:node",
     "fork:test": "yarn workspace hardhat run fork:test",
     "start": "yarn workspace next-app run start",
+    "storybook": "yarn workspace next-app run storybook",
     "next:dev": "yarn workspace next-app run dev",
     "next:test": "yarn workspace next-app run test",
     "next:build": "yarn workspace next-app run build",
