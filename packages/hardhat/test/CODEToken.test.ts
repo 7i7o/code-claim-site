@@ -1,8 +1,7 @@
 import { expect } from './chai-setup';
 import { ethers, deployments, getUnnamedAccounts, getNamedAccounts } from 'hardhat';
-import MerkleTree from 'merkletreejs'; // MerkleTree.js
 import { CODEToken } from '../../next-app/src/typechain';
-import { setupUser, setupUsers } from './utils';
+import { setupUsers } from './utils';
 import { generateLeaf } from './utils/merkleUtils';
 
 import MerkleGenerator from '../utils/merkleGenerator';
@@ -41,7 +40,7 @@ describe('CODEToken', function () {
     const { treasury } = await getNamedAccounts();
     const Token = <CODEToken>await ethers.getContract('CODEToken');
     const treasuryBalance = await Token.balanceOf(treasury);
-    expect(treasuryBalance).to.equal(ethers.utils.parseUnits((10_000_000).toString(), TOKEN_DECIMALS));
+    expect(treasuryBalance).to.equal(ethers.utils.parseUnits((6_500_000).toString(), TOKEN_DECIMALS));
   });
 
   it('cannot claim if no allocation', async function () {
