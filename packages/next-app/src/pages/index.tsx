@@ -2,11 +2,13 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback, useEffect, useState } from "react";
 import { ethers } from "ethers";
-import { Container, Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 import { CODEToken__factory } from "@/typechain";
 import { hasEthereum } from "@/utils";
-import { Button } from "@/components/Button";
+
+import { ClaimBox } from "components/ClaimBox";
+import { MainBox } from "components/MainBox";
 
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
@@ -33,12 +35,32 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <Box>
+    <Box m="0" w="100vw" h="100vh" background="blue">
       <Head>
         <title>$CODE Claim Page</title>
       </Head>
-      <Button label="TODO" />
-      <Container>{claimPeriodEnds}</Container>
+      <Flex direction="row" flexWrap="wrap">
+        <Box
+          w={["100vw", "50vw"]}
+          h="100vh"
+          m="0"
+          pl="5vw"
+          background="#08010D"
+        >
+          <Box mt="48px">Developer DAO</Box>
+          <MainBox />
+        </Box>
+        <Box
+          w={["100vw", "50vw"]}
+          h="100vh"
+          m="0"
+          backgroundColor="#F1F0F5"
+          align="center"
+          justifyContent="center"
+        >
+          <ClaimBox />
+        </Box>
+      </Flex>
     </Box>
   );
 };
