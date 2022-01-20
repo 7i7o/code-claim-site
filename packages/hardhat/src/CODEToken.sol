@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.2;
+pragma solidity ^0.8.9;
 
 import "./MerkleProof.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -15,7 +15,7 @@ contract CODEToken is ERC20, ERC20Permit, Ownable {
     bytes32 public merkleRoot;
     uint256 public claimPeriodEnds;
     address public treasury;
-    bool mintingEnabled = true;
+    bool public mintingEnabled = true;
 
     event MerkleRootChanged(bytes32 merkleRoot);
     event Claim(address indexed claimant, uint256 amount);

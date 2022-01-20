@@ -6,6 +6,7 @@ import { Container, Box } from "@chakra-ui/react";
 
 import { CODEToken__factory } from "@/typechain";
 import { hasEthereum } from "@/utils";
+import { Button } from "@/components/Button";
 
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
       <Head>
         <title>$CODE Claim Page</title>
       </Head>
-      <Container>TODO</Container>
+      <Button label="TODO" />
       <Container>{claimPeriodEnds}</Container>
     </Box>
   );
