@@ -4,10 +4,16 @@ exports[`renders homepage unchanged 1`] = `
 <div
   className="css-0"
 >
+  <button
+    className="chakra-button css-wxrd3r"
+    type="button"
+  >
+    TODO
+  </button>
   <div
     className="chakra-container css-0"
   >
-    TODO
+    0
   </div>
 </div>
 `;
