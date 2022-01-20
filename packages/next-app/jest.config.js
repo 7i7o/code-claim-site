@@ -1,11 +1,4 @@
 module.exports = {
-  coverageThreshold: {
-    global: {
-      branches: 70,
-      functions: 80,
-      lines: 80,
-    },
-  },
   collectCoverage: true,
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
@@ -14,7 +7,10 @@ module.exports = {
     "!**/.next/**",
     "!.**",
     "!**/**.config.**",
+    "!.storybook/**",
+    "!cypress/**",
     "!coverage/**",
+    "!src/stories/**",
     "!src/theme.ts",
     "!src/typechain/**",
     "!src/pages/_app.tsx",
