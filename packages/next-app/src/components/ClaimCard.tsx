@@ -1,9 +1,9 @@
-import { Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Spacer, Text } from "@chakra-ui/react";
 
 export enum ClaimCardState {
   disconnected,
   unclaimed,
-  claiming,
+  isClaiming,
   claimed,
 }
 
@@ -50,12 +50,43 @@ const ClaimButton = ({ label }: { label: string }) => (
   </Button>
 );
 
-const Header = ({ address }: { address: string }) => (
+interface HeaderData {
+  address: string;
+  image: string;
+  showLabel: boolean;
+}
+
+const Header = ({ address, image, showLabel }: HeaderData) => (
   <Flex align="center">
     <Avatar />
     <Flex direction="column" ml={["20px", "32px"]}>
-      <Text>ELIGIBLE</Text>
-      <Text>{address}</Text>
+      {showLabel && (
+        <Flex align="center">
+          <Image
+            src="assets/eligible-check.svg"
+            alt="check"
+            w="20px"
+            h="20px"
+            mr="8px"
+          />
+          <Text
+            bgClip="text"
+            bgGradient="linear(to-r, #AD00FF, #4E00EC)"
+            fontSize={["16px", "18px"]}
+            fontWeight="500"
+          >
+            ELIGIBLE
+          </Text>
+        </Flex>
+      )}
+      <Text
+        color="#08010D"
+        fontSize={["32px", "42px"]}
+        fontWeight="500"
+        mt="-8px"
+      >
+        {address}
+      </Text>
     </Flex>
   </Flex>
 );
@@ -101,7 +132,11 @@ export const ClaimCard = (props: { data: ClaimCardData }) => {
       direction="column"
       p="24px"
     >
-      <Header address={address} />
+      <Header
+        address={address}
+        image=""
+        showLabel={state !== ClaimCardState.disconnected}
+      />
       <Flex direction="column" mt="8" mb="8">
         {positions.map((pos, index) => {
           return (
