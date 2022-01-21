@@ -7,13 +7,26 @@ import { Box, Flex } from "@chakra-ui/react";
 import { CODEToken__factory } from "@/typechain";
 import { hasEthereum } from "@/utils";
 
-import { ClaimCard } from "components/ClaimCard";
+import { ClaimCard, ClaimCardData, ClaimCardState } from "components/ClaimCard";
 import { MainBox } from "components/MainBox";
 
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 const Home: NextPage = () => {
   const [claimPeriodEnds, setClaimPeriodEnds] = useState(0);
+
+  const claimCardData: ClaimCardData = {
+    state: ClaimCardState.unclaimed,
+    address: "jazza.eth",
+    avatar: "",
+    allocations: {
+      member: "400",
+      voterOrPoap: "0",
+      earlyContributor: "1042",
+      total: "1442",
+    },
+  };
+
   async function fetchStore() {
     if (hasEthereum()) {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -59,11 +72,7 @@ const Home: NextPage = () => {
           justifyContent="center"
         >
           <Box m={["24px", "10vw"]}>
-            <ClaimCard
-              address="jazza.eth"
-              allocationTotal="1442"
-              buttonLabel="CLAIM 1442 TOKENS"
-            />
+            <ClaimCard data={claimCardData} />
           </Box>
         </Box>
       </Flex>

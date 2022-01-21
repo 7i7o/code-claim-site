@@ -1,8 +1,22 @@
 import { Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
 
-interface ClaimCardProps {
+export enum ClaimCardState {
+  disconnected,
+  unclaimed,
+  claiming,
+  claimed,
+}
+
+export interface ClaimCardData {
+  state: ClaimCardState;
   address: string;
-  buttonLabel: string;
+  avatar: string;
+  allocations: {
+    member: string;
+    voterOrPoap: string;
+    earlyContributor: string;
+    total: string;
+  };
 }
 
 const Avatar = () => {
@@ -69,12 +83,12 @@ const Position = ({
   </Flex>
 );
 
-export const ClaimCard = (props: ClaimCardProps) => {
-  const { address, allocationTotal, buttonLabel } = props;
+export const ClaimCard = (props: { data: ClaimCardData }) => {
+  const { address, state, allocations } = props.data;
   const positions = [
-    { title: "Minted D4R NFT", value: "400" },
-    { title: "Pre Season 0 activity", value: "0" },
-    { title: "Early Contributor", value: "1042" },
+    { title: "Minted D4R NFT", value: allocations.member },
+    { title: "Pre Season 0 activity", value: allocations.voterOrPoap },
+    { title: "Early Contributor", value: allocations.earlyContributor },
   ];
   return (
     <Flex
@@ -92,19 +106,19 @@ export const ClaimCard = (props: ClaimCardProps) => {
         {positions.map((pos, index) => {
           return (
             <Box key={index} my="2">
-              <Position title={pos.title} value={pos.value} />
+              <Position title={pos.title} value={pos.value} isBig={false} />
             </Box>
           );
         })}
         <Box mt="6">
           <Position
             title="$CODE allocation"
-            value={allocationTotal}
+            value={allocations.total}
             isBig={true}
           />
         </Box>
       </Flex>
-      <ClaimButton label={buttonLabel} />
+      <ClaimButton label={`CLAIM ${allocations.total} TOKENS`} />
     </Flex>
   );
 };
