@@ -41,7 +41,7 @@ const Home: NextPage = () => {
       </Head>
       <Flex direction="row" flexWrap="wrap">
         <Box
-          w={["100vw", "50vw"]}
+          w={{ base: "100vw", lg: "50vw" }}
           h="100vh"
           m="0"
           pl="5vw"
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           <MainBox />
         </Box>
         <Box
-          w={["100vw", "50vw"]}
+          w={{ base: "100vw", lg: "50vw" }}
           h="100vh"
           m="0"
           backgroundColor="#F1F0F5"
