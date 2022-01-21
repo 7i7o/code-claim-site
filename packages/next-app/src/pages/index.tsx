@@ -7,7 +7,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import { CODEToken__factory } from "@/typechain";
 import { hasEthereum } from "@/utils";
 
-import { ClaimBox } from "components/ClaimBox";
+import { ClaimCard } from "components/ClaimCard";
 import { MainBox } from "components/MainBox";
 
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
@@ -58,7 +58,13 @@ const Home: NextPage = () => {
           align="center"
           justifyContent="center"
         >
-          <ClaimBox />
+          <Box m={["24px", "10vw"]}>
+            <ClaimCard
+              address="jazza.eth"
+              allocationTotal="1442"
+              buttonLabel="CLAIM 1442 TOKENS"
+            />
+          </Box>
         </Box>
       </Flex>
     </Box>
