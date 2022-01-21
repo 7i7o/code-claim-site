@@ -30,6 +30,10 @@ const Avatar = () => {
   );
 };
 
+const ButtonPlaceholder = () => (
+  <Box background="gray.200" borderRadius="12px" w="100%" h="56px" mt="24px" />
+);
+
 const ClaimButton = ({ label }: { label: string }) => (
   <Button
     background="#08010D"
@@ -54,9 +58,10 @@ interface HeaderData {
   address: string;
   image: string;
   showLabel: boolean;
+  showPlaceholder: boolean;
 }
 
-const Header = ({ address, image, showLabel }: HeaderData) => (
+const Header = ({ address, image, showLabel, showPlaceholder }: HeaderData) => (
   <Flex align="center">
     <Avatar />
     <Flex direction="column" ml={["20px", "32px"]}>
@@ -136,6 +141,7 @@ export const ClaimCard = (props: { data: ClaimCardData }) => {
         address={address}
         image=""
         showLabel={state !== ClaimCardState.disconnected}
+        showPlaceholder={state === ClaimCardState.disconnected}
       />
       <Flex direction="column" mt="8" mb="8">
         {positions.map((pos, index) => {
@@ -153,7 +159,11 @@ export const ClaimCard = (props: { data: ClaimCardData }) => {
           />
         </Box>
       </Flex>
-      <ClaimButton label={`CLAIM ${allocations.total} TOKENS`} />
+      {state === ClaimCardState.disconnected ? (
+        <ButtonPlaceholder />
+      ) : (
+        <ClaimButton label={`CLAIM ${allocations.total} TOKENS`} />
+      )}
     </Flex>
   );
 };
