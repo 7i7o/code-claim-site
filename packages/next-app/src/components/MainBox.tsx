@@ -2,12 +2,14 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 
 import { Button } from "components/Button";
 
-// TODO: add state isConnected (switch button when true)
-export const MainBox = () => {
+interface MainBoxProps {
+  isConnected: boolean;
+}
+
+export const MainBox = ({ isConnected }: MainBoxProps) => {
   const primaryButtonProps = {
     w: "100%",
   };
-  const learnMoreButtonProps = {};
   return (
     <Box my={["24px", "0"]} w="100%">
       <Heading
@@ -31,11 +33,28 @@ export const MainBox = () => {
       </Text>
       <Flex direction={["column", "row"]}>
         <Box mb={["4", "0"]} mr={["0", "7"]} w={["100%", "inherit"]}>
-          <Button
-            primary={true}
-            label="CONNECT WALLET"
-            {...primaryButtonProps}
-          />
+          {isConnected ? (
+            <Box w="100%" aling="center">
+              <Text
+                background="rgba(26, 236, 173, 0.15)"
+                borderRadius={8}
+                color="#1AECAD"
+                fontSize={["16px", "18px"]}
+                fontWeight="900"
+                height="52px"
+                padding={["13px 4rem", "13px 2rem"]}
+                w="100%"
+              >
+                WALLET CONNECTED
+              </Text>
+            </Box>
+          ) : (
+            <Button
+              primary={true}
+              label="CONNECT WALLET"
+              {...primaryButtonProps}
+            />
+          )}
         </Box>
         <Button label="LEARN MORE" />
       </Flex>

@@ -15,6 +15,7 @@ const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 const Home: NextPage = () => {
   const [claimPeriodEnds, setClaimPeriodEnds] = useState(0);
+  const isConnected = true;
 
   const claimCardData: ClaimCardData = {
     state: ClaimCardState.unclaimed,
@@ -65,7 +66,7 @@ const Home: NextPage = () => {
           <Box mt={["32px", "48px"]} mb="22vh">
             <Logo />
           </Box>
-          <MainBox />
+          <MainBox isConnected={isConnected} />
         </Box>
         <Flex
           w={{ base: "100vw", lg: "50vw" }}
