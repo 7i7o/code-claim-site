@@ -63,7 +63,7 @@ const Home: NextPage = () => {
           <Box mt="48px">Developer DAO</Box>
           <MainBox />
         </Box>
-        <Box
+        <Flex
           w={{ base: "100vw", lg: "50vw" }}
           h="100vh"
           m="0"
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
           <Box m={["24px", "10vw"]}>
             <ClaimCard data={claimCardData} />
           </Box>
-        </Box>
+        </Flex>
       </Flex>
     </Box>
   );
