@@ -1,3 +1,6 @@
+import "@fontsource/ibm-plex-mono";
+import "@fontsource/zen-kaku-gothic-new";
+
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 
