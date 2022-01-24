@@ -7,13 +7,19 @@ import { Box, Flex } from "@chakra-ui/react";
 import { CODEToken__factory } from "@/typechain";
 import { hasEthereum } from "@/utils";
 
-import { ClaimCard, ClaimCardData, ClaimCardState } from "components/ClaimCard";
-import { MainBox } from "components/MainBox";
+import {
+  ClaimCard,
+  ClaimCardData,
+  ClaimCardState,
+} from "@/components/ClaimCard";
+import { Logo } from "@/components/Logo";
+import { MainBox } from "@/components/MainBox";
 
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 const Home: NextPage = () => {
   const [claimPeriodEnds, setClaimPeriodEnds] = useState(0);
+  const isConnected = true;
 
   const claimCardData: ClaimCardData = {
     state: ClaimCardState.unclaimed,
@@ -57,11 +63,14 @@ const Home: NextPage = () => {
           w={{ base: "100vw", lg: "50vw" }}
           h="100vh"
           m="0"
-          pl="5vw"
+          pl={["24px", "5vw"]}
+          pr={["40px", "8vw"]}
           background="#08010D"
         >
-          <Box mt="48px">Developer DAO</Box>
-          <MainBox />
+          <Box mt={["32px", "48px"]} mb="22vh">
+            <Logo />
+          </Box>
+          <MainBox isConnected={isConnected} />
         </Box>
         <Flex
           w={{ base: "100vw", lg: "50vw" }}
