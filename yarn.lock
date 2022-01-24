@@ -3605,6 +3605,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/ibm-plex-mono@npm:^4.5.1":
+  version: 4.5.1
+  resolution: "@fontsource/ibm-plex-mono@npm:4.5.1"
+  checksum: 32a807cdcf444ea85f8ce38933b13aff326b1871f2e6f87a1b14d75f6184afe659a6f6594dd528e146ae539986b777e469d6fe2fe5007cc9a3d4b9205d185b6b
+  languageName: node
+  linkType: hard
+
+"@fontsource/zen-kaku-gothic-new@npm:^4.5.3":
+  version: 4.5.3
+  resolution: "@fontsource/zen-kaku-gothic-new@npm:4.5.3"
+  checksum: 091b3e7897a5ed1dc9bf532f71b1633db75cab0beaa0fcb04091ddce8adbd90210f26bcd02770565fc1b5ac93f0af3d3be8937f01d0514c3f004ea8ce48d222a
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1":
   version: 1.1.2
   resolution: "@gar/promisify@npm:1.1.2"
@@ -18020,6 +18034,8 @@ __metadata:
     "@chakra-ui/storybook-addon": ^1.0.1
     "@emotion/react": ^11
     "@emotion/styled": ^11
+    "@fontsource/ibm-plex-mono": ^4.5.1
+    "@fontsource/zen-kaku-gothic-new": ^4.5.3
     "@mdx-js/react": ^1.6.22
     "@storybook/addon-actions": ^6.4.13
     "@storybook/addon-docs": ^6.4.13

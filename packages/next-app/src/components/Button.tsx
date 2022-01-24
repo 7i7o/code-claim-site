@@ -12,10 +12,10 @@ export const Button = ({ primary = false, label, ...props }: ButtonProps) => {
       type="button"
       backgroundColor={primary ? "#fff" : "#08010d"}
       color={primary ? "#000" : "#fff"}
-      fontSize={16}
+      fontSize={["16px", "18px"]}
       height="52px"
       lineHeight={24}
-      fontWeight={500}
+      fontWeight="900"
       border={"2px solid #fff"}
       borderRadius={primary ? 8 : "0.5rem"}
       padding="0 2rem"

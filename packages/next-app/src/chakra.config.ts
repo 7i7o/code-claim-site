@@ -8,4 +8,8 @@ export const theme = extendTheme({
       700: "#2a69ac",
     },
   },
+  fonts: {
+    heading: "Zen Kaku Gothic New",
+    body: "Zen Kaku Gothic New",
+  },
 });
