@@ -40,6 +40,7 @@ const ClaimButton = ({ label }: { label: string }) => (
     borderRadius="12px"
     color="#FFF"
     fontSize={["16px", "18px"]}
+    fontWeight="900"
     w="100%"
     h="56px"
     mt="24px"
@@ -50,7 +51,13 @@ const ClaimButton = ({ label }: { label: string }) => (
       transformStyle: "preserve-3d",
     }}
   >
-    {label}
+    <Text>
+      CLAIM{" "}
+      <span style={{ fontFamily: "IBM Plex Mono", fontWeight: 600 }}>
+        {label}
+      </span>{" "}
+      TOKENS
+    </Text>
   </Button>
 );
 
@@ -111,7 +118,11 @@ const Position = ({
         {title}
       </Text>
       <Spacer />
-      <Text fontSize={isBig ? "32px" : "24px"} fontWeight="400">
+      <Text
+        fontFamily="IBM Plex Mono"
+        fontSize={isBig ? "32px" : "24px"}
+        fontWeight="400"
+      >
         {value}
       </Text>
     </Flex>
@@ -162,7 +173,7 @@ export const ClaimCard = (props: { data: ClaimCardData }) => {
       {state === ClaimCardState.disconnected ? (
         <ButtonPlaceholder />
       ) : (
-        <ClaimButton label={`CLAIM ${allocations.total} TOKENS`} />
+        <ClaimButton label={allocations.total} />
       )}
     </Flex>
   );
