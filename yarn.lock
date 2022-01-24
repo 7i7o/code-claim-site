@@ -9529,8 +9529,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "code-claim-site@workspace:."
   dependencies:
-    "@fontsource/ibm-plex-mono": ^4.5.1
-    "@fontsource/zen-kaku-gothic-new": ^4.5.3
     eslint: ^8.2.0
     prettier: ^2.4.1
   languageName: unknown
@@ -18036,6 +18034,8 @@ __metadata:
     "@chakra-ui/storybook-addon": ^1.0.1
     "@emotion/react": ^11
     "@emotion/styled": ^11
+    "@fontsource/ibm-plex-mono": ^4.5.1
+    "@fontsource/zen-kaku-gothic-new": ^4.5.3
     "@mdx-js/react": ^1.6.22
     "@storybook/addon-actions": ^6.4.13
     "@storybook/addon-docs": ^6.4.13

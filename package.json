@@ -42,9 +42,5 @@
   "devDependencies": {
     "eslint": "^8.2.0",
     "prettier": "^2.4.1"
-  },
-  "dependencies": {
-    "@fontsource/ibm-plex-mono": "^4.5.1",
-    "@fontsource/zen-kaku-gothic-new": "^4.5.3"
   }
 }
