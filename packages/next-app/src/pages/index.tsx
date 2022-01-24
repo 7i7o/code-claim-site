@@ -7,9 +7,13 @@ import { Box, Flex } from "@chakra-ui/react";
 import { CODEToken__factory } from "@/typechain";
 import { hasEthereum } from "@/utils";
 
-import { ClaimCard, ClaimCardData, ClaimCardState } from "components/ClaimCard";
-import { Logo } from "components/Logo";
-import { MainBox } from "components/MainBox";
+import {
+  ClaimCard,
+  ClaimCardData,
+  ClaimCardState,
+} from "@/components/ClaimCard";
+import { Logo } from "@/components/Logo";
+import { MainBox } from "@/components/MainBox";
 
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 

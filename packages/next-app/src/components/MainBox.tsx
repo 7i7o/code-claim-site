@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 
-import { Button } from "components/Button";
+import { Button } from "@/components/Button";
 
 interface MainBoxProps {
   isConnected: boolean;
